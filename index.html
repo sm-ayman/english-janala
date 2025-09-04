@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    <!-- header -->
     <header>
         <!-- navbar -->
         <div class="navbar bg-[#ECF6FE] shadow-sm">
@@ -86,7 +87,25 @@
             </div>
         </section>
     </header>
-    <script src="./script.js"></script>
+    <!-- main-section -->
+    <main class="my-10 mx-10">
+        <!-- learn-vocab-section -->
+        <section>
+            <h2 class="text-4xl font-bold mb-6 text-center"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
+            </h2>
+            <!-- level-container -->
+            <div id="level-conatainer" class="flex flex-wrap justify-center gap-2">
+            </div>
+        </section>
+        <!-- word-conatiner -->
+        <section id="word-container" class="bg-[#F8F8F8] mt-10 p-10 mx-auto w-11/12 grid lg:grid-cols-3 gap-4">
+            <div class="text-center p-20 mx-auto col-span-full flex flex-col gap-y-4">
+                <p class="text-[#79716B] ">আপনি এখনো কোন Lesson Select করেন নি!</p>
+                <h3 class="font-secondary font-semibold text-3xl">একটি Lesson Select করুন।</h3>
+            </div>
+        </section>
+    </main>
+    <script src="./script/index.js"></script>
 </body>
 
 </html>

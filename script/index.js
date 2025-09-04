@@ -1,0 +1,53 @@
+// lesson-loader
+const loadLessons = () => {
+  const url = "https://openapi.programming-hero.com/api/levels/all";
+  fetch(url)
+    .then((res) => res.json())
+    .then((json) => displayLesson(json.data));
+};
+// word-loader
+const loadLevelWord = (id) => {
+  const url = `https://openapi.programming-hero.com/api/level/${id}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((json) => displayLevelWord(json.data));
+};
+// display-lesson
+const displayLesson = (lessons) => {
+  // 1. get the container & empty it
+  const levelContainer = document.getElementById("level-conatainer");
+  levelContainer.innerHTML = "";
+  // 2. get each lessons
+  for (const lesson of lessons) {
+    // 3. create Element
+    const btnDiv = document.createElement("div");
+    btnDiv.innerHTML = `<button onclick="loadLevelWord(${lesson.level_no})" class="btn btn-outline btn-primary">
+                        <i class="fa-solid fa-book"></i> Lesson - ${lesson.level_no}
+                    </button>`;
+    // 4. append the element to the container
+    levelContainer.append(btnDiv);
+  }
+};
+// display-level-word
+const displayLevelWord = (words) => {
+  const wordContainer = document.getElementById("word-container");
+  wordContainer.innerHTML = "";
+  
+  words.forEach((word) => {
+    const wordCard = document.createElement("div");
+    wordCard.innerHTML = `
+        <div class="bg-white rounded-2xl shadow-sm text-center px-5 py-8 space-y-4">
+                <h2 class="font-bold text-xl">${word.word}</h2>
+                <p class="font-semibold">Meaning/Pronunciation</p>
+                <div class="text-2xl font-medium font-secondary">"${word.meaning} / ${word.pronunciation}"</div>
+                <div class="flex justify-between">
+                    <button class="btn !bg-[#E7F3FE] hover:!bg-[#3B25C1] hover:!text-white"><i class="fa-solid fa-circle-info"></i></button>
+                    <button class="btn !bg-[#E7F3FE] hover:!bg-[#3B25C1] hover:!text-white"><i class="fa-solid fa-play"></i></button>
+                </div>
+        </div>
+    `;
+    wordContainer.append(wordCard);
+  });
+};
+// 33-4 to be continued - 12:00
+loadLessons();
