@@ -43,10 +43,12 @@ const displayLevelWord = (words) => {
   words.forEach((word) => {
     const wordCard = document.createElement("div");
     wordCard.innerHTML = `
-        <div class="bg-white rounded-2xl shadow-sm text-center px-5 py-8 space-y-4">
-                <h2 class="font-bold text-xl">${word.word}</h2>
+        <div class="bg-white rounded-2xl shadow-sm text-center px-5 py-8 space-y-4 h-full">
+                <h2 class="font-bold text-xl">${word.word ? word.word : "শব্দ পাওয়া যায়নি"}</h2>
                 <p class="font-semibold">Meaning/Pronunciation</p>
-                <div class="text-2xl font-medium font-secondary">"${word.meaning} / ${word.pronunciation}"</div>
+                <div class="text-2xl font-medium font-secondary">"${
+                  word.meaning ? word.meaning : "অর্থ পাওয়া যায়নি"
+                } / ${word.pronunciation ? word.pronunciation : "Pronunciation পাওয়া যায়নি"}"</div>
                 <div class="flex justify-between">
                     <button class="btn !bg-[#E7F3FE] hover:!bg-[#3B25C1] hover:!text-white"><i class="fa-solid fa-circle-info"></i></button>
                     <button class="btn !bg-[#E7F3FE] hover:!bg-[#3B25C1] hover:!text-white"><i class="fa-solid fa-play"></i></button>
