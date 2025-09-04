@@ -19,9 +19,58 @@
 </head>
 
 <body>
+    <header>
+        <!-- navbar -->
+        <div class="navbar bg-[#ECF6FE] shadow-sm">
+            <!-- Navbar Start -->
+            <div class="navbar-start ps-4 lg:ps-10">
+                <a href="#" class="font-semibold text-lg flex items-center gap-1">
+                    English
+                    <img src="./assets/logo.png" alt="" class="h-6 w-6">
+                    <span class="font-secondary">জানালা</span>
+                </a>
+            </div>
 
-    <h1 class="text-center text-3xl py-10 font-bold text-indigo-600">English Janala</h1>
-    <p class="text-center text-xl font-semibold animate-pulse">Project Initiated</p>
+            <!-- Navbar Center (Buttons visible only on large screens) -->
+            <div class="navbar-end pe-10">
+                <div class="hidden lg:flex gap-3">
+                    <button class="btn btn-outline btn-primary">
+                        <i class="fa-solid fa-circle-question"></i> FAQ
+                    </button>
+                    <button class="btn btn-outline btn-primary">
+                        <i class="fa-solid fa-book-open-reader"></i> Learn
+                    </button>
+                    <button class="btn btn-outline btn-primary hover:bg-red-700 hover:border-0 hover:duration-500">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Navbar End (Hamburger visible only on mobile) -->
+            <div class="lg:hidden">
+                <div class="dropdown dropdown-end">
+                    <label tabindex="0" class="btn btn-ghost">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </label>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+                        <li><a><i class="fa-solid fa-book-open-reader"></i> Learn</a></li>
+                        <li><a><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </header>
     <script src="./script.js"></script>
 </body>
 
