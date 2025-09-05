@@ -25,6 +25,7 @@ const displayLesson = (lessons) => {
 
 // word-loader
 const loadLevelWord = (id) => {
+  loadingSpinner(true);
   const url = `https://openapi.programming-hero.com/api/level/${id}`;
   fetch(url)
     .then((res) => res.json())
@@ -42,7 +43,7 @@ const displayLevelWord = (words) => {
   if (words.length == 0) {
     // alert("no words detected!");
     wordContainer.innerHTML = `<div class="text-center lg:p-20 mx-auto col-span-full flex flex-col gap-y-4">
-                <img src='./assets/alert-error.png' class="w-25 mx-auto animate-bounce"/>
+                <img src='./assets/alert-error.png' class="lg:w-25 w-10 mx-auto animate-bounce"/>
                 <p class="text-[#79716B] ">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
                 <h3 class="font-secondary font-semibold text-3xl">নেক্সট Lesson এ যান।</h3>
             </div>`;
@@ -70,6 +71,7 @@ const displayLevelWord = (words) => {
     `;
     wordContainer.append(wordCard);
   });
+  loadingSpinner(false);
 };
 // remove active from levelBtn
 const removeActive = () => {
@@ -124,4 +126,18 @@ const displaySynonyms = (arr) => {
   );
   return btnElements.join(" ");
 };
+
+// loading-spinner
+const loadingSpinner = (status) => {
+  const spinner = document.getElementById("spinner");
+  const wordContainer = document.getElementById("word-container");
+  if (status == true) {
+    spinner.classList.remove("hidden");
+    wordContainer.classList.add("hidden");
+  } else {
+    spinner.classList.add("hidden");
+    wordContainer.classList.remove("hidden");
+  }
+};
+
 loadLessons();
