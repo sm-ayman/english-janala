@@ -97,7 +97,7 @@ const displayWordDetails = (wordDetails) => {
                             <h3 class="font-bold text-2xl mb-3">${
                               wordDetails.word
                             } ( <i class="fa-solid fa-microphone-lines"></i>
-                                :${wordDetails.pronunciation})
+                                : ${wordDetails.pronunciation})
                             </h3>
                             <h5 class="font-semibold">Meaning</h5>
                             <p class="font-medium mb-2">${
@@ -141,3 +141,6 @@ const loadingSpinner = (status) => {
 };
 
 loadLessons();
+
+
+// 33-9 Show Synonyms using function and Manage Spinner -- 12:37
