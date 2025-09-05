@@ -98,13 +98,31 @@
             </div>
         </section>
         <!-- word-conatiner -->
-        <section id="word-container" class="bg-[#F8F8F8] mt-10 lg:p-10 p-4 mx-auto w-11/12 grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <section id="word-container"
+            class="bg-[#F8F8F8] mt-10 lg:p-10 p-4 mx-auto w-11/12 grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div class="text-center lg:p-20 mx-auto col-span-full flex flex-col gap-y-4">
                 <p class="text-[#79716B] ">আপনি এখনো কোন Lesson Select করেন নি!</p>
                 <h3 class="font-secondary font-semibold text-3xl">একটি
-                    Lesson Select <i class="fa-solid fa-hand-pointer text-md text-green-600 animate-pulse"></i> করুন।</h3>
+                    Lesson Select <i class="fa-solid fa-hand-pointer text-md text-green-600 animate-pulse"></i> করুন।
+                </h3>
             </div>
         </section>
+        <div>
+            <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+            <dialog id="word_details_modal" class="modal modal-bottom sm:modal-middle">
+                <div class="modal-box">
+                    <div id="word-details-container">
+
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button class="btn !bg-[#422AD5] hover:!bg-green-600 !text-white">Continue Learning</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+        </div>
     </main>
     <script src="./script/index.js"></script>
 </body>
