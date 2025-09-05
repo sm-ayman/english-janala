@@ -142,5 +142,22 @@ const loadingSpinner = (status) => {
 
 loadLessons();
 
-
-// 33-9 Show Synonyms using function and Manage Spinner -- 12:37
+// search-vocab
+document.getElementById("btn-search").addEventListener("click", () => {
+  removeActive();
+  const input = document.getElementById("input-search");
+  const searchValue = input.value;
+  // console.log(searchValue);
+  fetch("https://openapi.programming-hero.com/api/words/all")
+    .then((res) => res.json())
+    .then((data) => {
+      // console.log(data);
+      const allWords = data.data;
+      // console.log(allWords);
+      const filteredWords = allWords.filter((word) =>
+        word.word.toLowerCase().includes(searchValue)
+      );
+      // console.log(filteredWords);
+      displayLevelWord(filteredWords);
+    });
+});
