@@ -47,7 +47,7 @@ const displayLevelWord = (words) => {
   wordContainer.innerHTML = "";
   if (words.length == 0) {
     // alert("no words detected!");
-    wordContainer.innerHTML = `<div class="text-center p-20 mx-auto col-span-full flex flex-col gap-y-4">
+    wordContainer.innerHTML = `<div class="text-center lg:p-20 mx-auto col-span-full flex flex-col gap-y-4">
                 <img src='./assets/alert-error.png' class="w-25 mx-auto animate-bounce"/>
                 <p class="text-[#79716B] ">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
                 <h3 class="font-secondary font-semibold text-3xl">নেক্সট Lesson এ যান।</h3>
